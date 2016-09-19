@@ -15,6 +15,6 @@ public class SplashActivity extends AppCompatActivity {
 
     public void gotoSelectType(View view)
     {
-        startActivity(new Intent(SplashActivity.this, SelectTypeActivity.class));
+        startActivity(new Intent(SplashActivity.this, StartActivity.class));
     }
 }

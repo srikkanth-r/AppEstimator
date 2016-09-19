@@ -7,7 +7,17 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.srikkanth.appestimator.SelectTypeActivity">
+    tools:context="com.srikkanth.appestimator.FeatureLoginActivity">
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/btnNext"
+        android:onClick="gotoFeatureLogin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,49 +33,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="left">
+        android:layout_centerHorizontal="true">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="What type of application are you building?"
-            android:id="@+id/textView"
+            android:text="Do people have to login?"
+            android:id="@+id/textView2"
             android:layout_marginBottom="20dp"/>
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mobile App"
-            android:id="@+id/checkBoxMobileApp" />
+            android:text="Email"
+            android:id="@+id/checkBox" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3D Game"
-            android:id="@+id/checkBox3DGame" />
+            android:text="Social"
+            android:id="@+id/checkBox2" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Simulation"
-            android:id="@+id/checkBoxSimulation" />
+            android:text="No"
+            android:id="@+id/checkBox3" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HTML5 WBT"
-            android:id="@+id/checkBoxWBT" />
+            android:text="Not sure"
+            android:id="@+id/checkBox4" />
     </LinearLayout>
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        android:id="@+id/btnNext"
-        android:onClick="gotoSelectPlatform"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
 </RelativeLayout>

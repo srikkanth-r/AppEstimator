@@ -1,7 +1,9 @@
 package com.srikkanth.appestimator;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
@@ -13,6 +15,7 @@ public class SelectTypeActivity extends AppCompatActivity implements CompoundBut
 
     CheckBox chkMobile, chk3D, chkSimulation, chkWBT;
     TextView txtPrice;
+    boolean isOptionSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,8 @@ public class SelectTypeActivity extends AppCompatActivity implements CompoundBut
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//        Toast.makeText(this, "checked", Toast.LENGTH_LONG).show();
+
+        isOptionSelected = isChecked;
 
         switch (buttonView.getId())
         {
@@ -51,17 +55,33 @@ public class SelectTypeActivity extends AppCompatActivity implements CompoundBut
             case R.id.checkBox3DGame:
                 if(isChecked)
                 Global.setPrice(Global.getPrice() + 1000);
+                else
+                    Global.setPrice(Global.getPrice() - 1000);
                 break;
 
             case R.id.checkBoxSimulation:
+                if(isChecked)
                 Global.setPrice(Global.getPrice() + 800);
+                else
+                    Global.setPrice(Global.getPrice() - 800);
                 break;
 
             case R.id.checkBoxWBT:
+                if(isChecked)
                 Global.setPrice(Global.getPrice() + 500);
+                else
+                    Global.setPrice(Global.getPrice() - 500);
                 break;
         }
         txtPrice.setText("Price: $" + Global.getPrice());
 
+    }
+
+    public void gotoSelectPlatform(View view)
+    {
+        if(isOptionSelected)
+        startActivity(new Intent(SelectTypeActivity.this, SelectPlatformActivity.class));
+        else
+            Toast.makeText(this, "You need to select an app type!", Toast.LENGTH_LONG).show();
     }
 }

@@ -15,6 +15,6 @@ public class StartActivity extends AppCompatActivity {
 
     public void launchQuestions(View view) {
         /*launch next activity*/
-        startActivity(new Intent(StartActivity.this, SelectPlatformActivity.class));
+        startActivity(new Intent(StartActivity.this, SelectTypeActivity.class));
     }
 }
